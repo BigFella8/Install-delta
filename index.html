@@ -1,59 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Install Delta</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Rubik', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Delta Install</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    background: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
+    color: #c5c6c7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Navbar */
+  nav {
+    position: sticky;
+    top: 0;
+    background: #1f2833;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    z-index: 100;
+  }
+  nav .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #66fcf1;
+    letter-spacing: 2px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav ul li a {
+    color: #45a29e;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  nav ul li a:hover {
+    color: #66fcf1;
+  }
+
+  /* Hero section */
+  header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(90deg, #66fcf1, #45a29e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #45a29e;
+  }
+  header p {
+    font-size: 1.25rem;
+    color: #c5c6c7;
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+  .btn-install {
+    background: #45a29e;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0b0c10;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #45a29e;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-install:hover {
+    background: #66fcf1;
+    box-shadow: 0 0 25px #66fcf1;
+    transform: scale(1.05);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #45a29e;
+    background: #1f2833;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2.5rem;
     }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
+    header p {
+      font-size: 1rem;
     }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 1.5em;
+    nav ul {
+      gap: 1rem;
     }
-    .cta-button {
-      background-color: #1e90ff;
-      color: #fff;
-      padding: 1em 2em;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      text-decoration: none;
-    }
-    .cta-button:hover {
-      background-color: #63b3ed;
-      transform: scale(1.05);
-    }
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2em;
-      }
-      p {
-        font-size: 1em;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <h1>Install Delta Executor</h1>
-  <p>Experience the next level of iOS exploiting. Tap below to install Delta on your device.</p>
-  <a class="cta-button" href="itms-services://?action=download-manifest&url=https://cdngloopup.cc/delta_ios/manifest.plist">Tap to Install</a>
+
+<nav>
+  <div class="logo">DELTA</div>
+  <ul>
+    <li><a href="#install">Install</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#support">Support</a></li>
+  </ul>
+</nav>
+
+<header id="install">
+  <h1>Delta Executor</h1>
+  <p>Install the best iOS executot for your device. Tap the button below on your iPhone or iPad to get started instantly.</p>
+  <a class="btn-install" href="itms-services://?action=download-manifest&url=https://cdngloopup.cc/delta_ios/manifest.plist">Tap to Install</a>
+</header>
+
+<footer>
+  &copy; 2025 Delta Team — Built with ❤️
+</footer>
+
 </body>
 </html>
