@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Install Delta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
+      text-align: center;
+      padding: 50px;
+      background-color: #f9f9f9;
+    }
+    a {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #007aff;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    a:hover {
+      background-color: #005bb5;
+    }
+  </style>
+</head>
+<body>
+  <h1>Install Delta</h1>
+  <p>Tap the button below using Safari on your iPhone or iPad to install Delta.</p>
+  <a href="itms-services://?action=download-manifest&url=https://cdngloopup.cc/delta_ios/manifest.plist">
+    Tap to Install
+  </a>
+</body>
+</html>
