@@ -1,149 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LYEZ’S IPA FILE FOR DELTA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lyez</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Orbitron', sans-serif;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
     body {
-      background: linear-gradient(135deg, #0d0d0d 0%, #1c1c1c 100%);
-      color: #e0e0e0;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-    nav {
-      background: rgba(0, 0, 0, 0.85);
+      background-color: #0a0a0a;
+      color: white;
+      font-family: 'Space Grotesk', sans-serif;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.8);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    nav .logo {
-      color: #00ffe1;
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav ul li a {
-      color: #00d9ff;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #00ffe1;
+      text-align: center;
     }
 
-    header {
-      text-align: center;
-      padding: 6rem 2rem 4rem;
-      position: relative;
-      z-index: 2;
+    /* Canvas behind content */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
-    header h1 {
-      font-size: 3.5rem;
-      background: linear-gradient(90deg, #00ffe1, #00d0ff);
+
+    h1 {
+      font-size: 3.5em;
+      font-weight: 700;
+      background: linear-gradient(270deg, #00ffcc, #ff00ff, #00ffcc);
+      background-size: 600% 600%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
+      animation: gradientMove 6s ease infinite;
+      text-shadow: 0 0 10px rgba(0,255,204,0.5), 0 0 20px rgba(255,0,255,0.4);
+      margin-bottom: 0.5em;
     }
-    header p {
-      font-size: 1.2rem;
+
+    p {
+      font-size: 1.2em;
       color: #ccc;
-      margin-bottom: 2.5rem;
+      max-width: 500px;
+      line-height: 1.5;
     }
 
-    .btn {
-      background-color: #00ffe1;
-      color: #000;
-      padding: 1rem 2.5rem;
-      margin: 0.5rem;
-      font-size: 1.1rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      box-shadow: 0 0 20px #00ffe1;
-    }
-    .btn:hover {
-      background-color: #00d0ff;
-      box-shadow: 0 0 30px #00d0ff;
-      transform: scale(1.05);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      background-color: #111;
-      color: #00aabb;
-    }
-
-    /* Background logo overlay */
-    .background-icon {
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0.05;
-      font-size: 20rem;
-      z-index: 0;
-      pointer-events: none;
-      color: #00ffe1;
-      user-select: none;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      .background-icon {
-        font-size: 10rem;
-      }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
   </style>
 </head>
 <body>
+  <canvas id="particles"></canvas>
+  <div>
+    <h1>Lyez</h1>
+    <p>I like working with Lua scripts and making money from my creations.</p>
+  </div>
 
-<nav>
-  <div class="logo">Δ LYEZ’S IPA FILE FOR DELTA</div>
-  <ul>
-    <li><a href="#install">Install</a></li>
-    <li><a href="#discord">Discord</a></li>
-    <li><a href="#credits">Credits</a></li>
-  </ul>
-</nav>
+  <script>
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particlesArray;
 
-<div class="background-icon">忍✈️</div>
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-<header id="install">
-  <h1>LYEZ’S IPA FILE FOR DELTA</h1>
-  <p>The cleanest & fastest Roblox script executor. Built for performance. Styled like a ninja, flies like a jet.</p>
-  <a class="btn" href="https://files.catbox.moe/uqpltx.ipa">🚀 Tap to Install</a><br>
-  <a class="btn" href="https://discord.gg/deltacommunity" target="_blank">💬 Join Discord</a>
-</header>
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init();
+    });
 
-<footer id="credits">
-  Built with ⚡ by Mlemix — All rights reserved © 2025
-</footer>
+    class Particle {
+      constructor(x, y, size, speedX, speedY) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.speedX = speedX;
+        this.speedY = speedY;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.size > 0.2) this.size -= 0.02;
+      }
+      draw() {
+        ctx.fillStyle = 'rgba(0, 255, 204, 0.8)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
 
+    function init() {
+      particlesArray = [];
+      let numberOfParticles = (canvas.width * canvas.height) / 9000;
+      for (let i = 0; i < numberOfParticles; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        let size = Math.random() * 3 + 1;
+        let speedX = (Math.random() - 0.5) * 1.5;
+        let speedY = (Math.random() - 0.5) * 1.5;
+        particlesArray.push(new Particle(x, y, size, speedX, speedY));
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+  </script>
 </body>
 </html>
